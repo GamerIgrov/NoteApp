@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
-    public class Note : ICloneable //цикл. сложность = 13
+    internal class Note : ICloneable //цикл. сложность = 13
     {
         /// <summary>
         /// поле название заметки

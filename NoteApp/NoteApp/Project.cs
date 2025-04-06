@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NoteApp
 {
-    public class Project
+    internal class Project
     {
         /// <summary>
         /// Список заметок
