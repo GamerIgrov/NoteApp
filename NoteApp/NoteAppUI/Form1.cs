@@ -13,9 +13,22 @@ namespace NoteAppUI
 {
     public partial class MainForm : Form
     {
+        private static List<Note> notes = new List<Note>();
+        private Project _project;
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
