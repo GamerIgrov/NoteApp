@@ -16,6 +16,8 @@ namespace NoteApp
         /// Текущая заметка
         /// </summary>
         private int _currentNote;
+        private List<Note> list;
+
         /// <summary>
         /// Сеттер и геттер для списка заметок
         /// </summary>
@@ -28,10 +30,7 @@ namespace NoteApp
         /// Сортировка по времени изменения
         /// </summary>
         /// <returns></returns>
-        public List<Note> Sort()
-        {
-            return Projects.OrderByDescending(n => n.Updated).ToList();
-        }
+        public List<Note> Sort() => Projects.OrderByDescending(n => n.Updated).ToList();
         /// <summary>
         /// Сортировка по категории заметки и по времени изменения
         /// </summary>

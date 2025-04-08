@@ -34,13 +34,13 @@
             this.LabelModified = new System.Windows.Forms.Label();
             this.TextBoxTitle = new System.Windows.Forms.TextBox();
             this.TextBoxText = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ComboBoxCategory = new System.Windows.Forms.ComboBox();
             this.DateTimePickerCreated = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.boxTitle = new System.Windows.Forms.GroupBox();
             this.groupBoxButtons = new System.Windows.Forms.GroupBox();
-            this.ButtonOK = new System.Windows.Forms.Button();
             this.ButtonCancel = new System.Windows.Forms.Button();
+            this.ButtonOK = new System.Windows.Forms.Button();
             this.boxTitle.SuspendLayout();
             this.groupBoxButtons.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,7 @@
             this.TextBoxTitle.Name = "TextBoxTitle";
             this.TextBoxTitle.Size = new System.Drawing.Size(276, 22);
             this.TextBoxTitle.TabIndex = 4;
+            this.TextBoxTitle.TextChanged += new System.EventHandler(this.TextBoxTitle_TextChanged);
             // 
             // TextBoxText
             // 
@@ -100,14 +101,16 @@
             this.TextBoxText.Name = "TextBoxText";
             this.TextBoxText.Size = new System.Drawing.Size(800, 255);
             this.TextBoxText.TabIndex = 5;
+            this.TextBoxText.TextChanged += new System.EventHandler(this.TextBoxText_TextChanged);
             // 
-            // comboBox1
+            // ComboBoxCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(93, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 24);
-            this.comboBox1.TabIndex = 6;
+            this.ComboBoxCategory.FormattingEnabled = true;
+            this.ComboBoxCategory.Location = new System.Drawing.Point(93, 45);
+            this.ComboBoxCategory.Name = "ComboBoxCategory";
+            this.ComboBoxCategory.Size = new System.Drawing.Size(276, 24);
+            this.ComboBoxCategory.TabIndex = 6;
+            this.ComboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCategory_SelectedIndexChanged);
             // 
             // DateTimePickerCreated
             // 
@@ -135,7 +138,7 @@
             this.boxTitle.Controls.Add(this.TextBoxTitle);
             this.boxTitle.Controls.Add(this.LabelModified);
             this.boxTitle.Controls.Add(this.LabelCategory);
-            this.boxTitle.Controls.Add(this.comboBox1);
+            this.boxTitle.Controls.Add(this.ComboBoxCategory);
             this.boxTitle.Controls.Add(this.LabelCreated);
             this.boxTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.boxTitle.Location = new System.Drawing.Point(0, 0);
@@ -146,8 +149,8 @@
             // 
             // groupBoxButtons
             // 
-            this.groupBoxButtons.Controls.Add(this.ButtonCancel);
             this.groupBoxButtons.Controls.Add(this.ButtonOK);
+            this.groupBoxButtons.Controls.Add(this.ButtonCancel);
             this.groupBoxButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxButtons.Location = new System.Drawing.Point(0, 393);
             this.groupBoxButtons.Name = "groupBoxButtons";
@@ -155,23 +158,27 @@
             this.groupBoxButtons.TabIndex = 10;
             this.groupBoxButtons.TabStop = false;
             // 
-            // ButtonOK
-            // 
-            this.ButtonOK.Location = new System.Drawing.Point(628, 21);
-            this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.Size = new System.Drawing.Size(75, 23);
-            this.ButtonOK.TabIndex = 0;
-            this.ButtonOK.Text = "OK";
-            this.ButtonOK.UseVisualStyleBackColor = true;
-            // 
             // ButtonCancel
             // 
-            this.ButtonCancel.Location = new System.Drawing.Point(715, 21);
+            this.ButtonCancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ButtonCancel.Location = new System.Drawing.Point(722, 18);
             this.ButtonCancel.Name = "ButtonCancel";
-            this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
-            this.ButtonCancel.TabIndex = 1;
+            this.ButtonCancel.Size = new System.Drawing.Size(75, 36);
+            this.ButtonCancel.TabIndex = 0;
             this.ButtonCancel.Text = "Cancel";
             this.ButtonCancel.UseVisualStyleBackColor = true;
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
+            // ButtonOK
+            // 
+            this.ButtonOK.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ButtonOK.Location = new System.Drawing.Point(647, 18);
+            this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Size = new System.Drawing.Size(75, 36);
+            this.ButtonOK.TabIndex = 1;
+            this.ButtonOK.Text = "OK";
+            this.ButtonOK.UseVisualStyleBackColor = true;
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // FormAddEdit
             // 
@@ -199,12 +206,12 @@
         private System.Windows.Forms.Label LabelModified;
         private System.Windows.Forms.TextBox TextBoxTitle;
         private System.Windows.Forms.TextBox TextBoxText;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboBoxCategory;
         private System.Windows.Forms.DateTimePicker DateTimePickerCreated;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.GroupBox boxTitle;
         private System.Windows.Forms.GroupBox groupBoxButtons;
-        private System.Windows.Forms.Button ButtonCancel;
         private System.Windows.Forms.Button ButtonOK;
+        private System.Windows.Forms.Button ButtonCancel;
     }
 }
